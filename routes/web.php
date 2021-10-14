@@ -17,6 +17,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/hi', function () {
+    $human = "Coeg";
+    $feel = "angry";
+    $condition = "happy";
+
+    return view('hii', compact('human','feel','condition'));
+});
+
+Route::get('posting/{nama?}/{kelas?}/{jk?}/{alamat?}', function ($nama=null, $kelas=null, $jk=null) {
+    return view('post',
+    [
+    'a' => $nama, 
+    'b' => $kelas,
+    'c' => $jk
+    ]);
+});
+
+Route::get('/blog', function () {
+    $data = [
+        ['id' => 1, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 2, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 3, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 4, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 5, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 6, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 7, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 8, 'title' => 'For example', 'content' => 'For example'],
+        ['id' => 9, 'title' => 'For example', 'content' => 'For example'],
+        ['id' =>10, 'title' => 'For example', 'content' => 'For example']
+    ];
+
+    return view('blog', compact('data'));
+});
+
 Route::get('/rahasia', function () {
     return "ini tempat rahasia";
 });
