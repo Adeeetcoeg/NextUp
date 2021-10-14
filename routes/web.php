@@ -51,6 +51,35 @@ Route::get('/blog', function () {
     return view('blog', compact('data'));
 });
 
+Route::get('/datasiswa', function () {
+    $data = [
+        ['Nis' => 19201753164, 'Nama' => 'Aditya Nugroho', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 2, 'Nama' => 'Jojo Sutanto', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 3, 'Nama' => 'Aditya Riman Sanjaya', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 4, 'Nama' => 'M. Hassanudin', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 2', 'Wali Kelas' => 'Mis yanti'],
+        ['Nis' => 5, 'Nama' => 'Alvin', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 2', 'Wali Kelas' => 'Mis Yanti'],
+        ['Nis' => 6, 'Nama' => 'Abelina', 'Jenis Kelamin' => 'Perempuan', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPl 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 7, 'Nama' => 'Rehan Pratama', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPl 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 8, 'Nama' => 'Sandi Suryadi', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 9, 'Nama' => 'Adya Eka', 'Jenis Kelamin' => 'Perempuan', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 10, 'Nama' => 'Adzzura Angelita', 'Jenis Kelamin' => 'Perempuan', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna'],
+        ['Nis' => 11, 'Nama' => 'Muhammad Fajar', 'Jenis Kelamin' => 'Laki-Laki', 'Jurusan' => 'RPL',
+         'Kelas' => 'XII RPL 1', 'Wali Kelas' => 'Bu Herna  ']
+    ];
+
+    return view('datasiswa', compact('data'));
+});
+
 Route::get('/rahasia', function () {
     return "ini tempat rahasia";
 });
