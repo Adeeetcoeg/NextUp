@@ -28,7 +28,7 @@ Route::get('/hi', function () {
 Route::get('posting/{nama?}/{kelas?}/{jk?}/{alamat?}', function ($nama=null, $kelas=null, $jk=null) {
     return view('post',
     [
-    'a' => $nama, 
+    'a' => $nama,
     'b' => $kelas,
     'c' => $jk
     ]);
@@ -80,6 +80,52 @@ Route::get('/datasiswa', function () {
     return view('datasiswa', compact('data'));
 });
 
+Route::get('/siswa', function () {
+
+    $siswas = [
+        ['id' => 1,
+         'nama' => 'Aditya',
+         'username' => 'xCoeg',
+         'email' => 'Coegpengencuan@gmail.com',
+         'alamat' => 'Bandung',
+         'mapel'  => [
+                        'mapel1' => 'Bahasa Inggris',
+                        'mapel2' => 'Bahasa Indonesia',
+                        'mapel3' => 'Bahasa Yunani'
+         ]
+
+         ],
+    ];
+
+    return view('siswa', compact('siswas'));
+});
+
+Route::get('/hobi', function () {
+
+        $jee = [
+        ['nis' => 1001,
+         'nama' => 'Adzurra',
+         'kelas' => 'XII RPL 1',
+         'hobi'  => [
+                        'hobi1' => 'Pergi ke CC',
+                        'hobi2' => 'Tiktokan',
+                        'hobi3' => 'Makan Banyak'
+         ]
+         ],
+         ['nis' => 1002,
+         'nama' => 'Iqbal',
+         'kelas' => 'XII RPL 1',
+         'hobi'  => [
+                        'hobi1' => 'Ngebegal',
+                        'hobi2' => 'Ngaji',
+                        'hobi3' => 'Memancing'
+         ]
+         ],
+    ];
+
+    return view('hobi', compact('jee'));
+});
+
 Route::get('/rahasia', function () {
     return "ini tempat rahasia";
 });
@@ -91,14 +137,14 @@ Route::get('/biodata', function () {
     echo"Alamat : Bandung<br>";
     echo"Usia : 17<br>";
     echo"Status: Pelajar<br>";
-    
+
 });
 
 Route::get('/xc', function () {
     return"for example<br>
     ini barisan kedua<br>
     ini barisan ketiga<br>";
-    
+
 });
 
 Route::get('/input/{jawaban}', function($jawaban){
@@ -139,11 +185,11 @@ Route::get('pesanan/{makananan?}/{minuman?}/{cemilan?}',function($a=null,$b=null
     if( $a == null && $b == null && $c == null) {
         $pesan = "Anda Tidak memesan apapun, Silahkan pulang";
     } if ($a !== null) {
-        $pesan = "Anda Memesan <br> Makanan :  $a <br>"; 
+        $pesan = "Anda Memesan <br> Makanan :  $a <br>";
     } if ($a !== null && $b !== null) {
-        $pesan = "Anda Memesan <br> Makanan :  $a <br> Minuman : $b <br>"; 
+        $pesan = "Anda Memesan <br> Makanan :  $a <br> Minuman : $b <br>";
     } if ($a !== null && $b !== null && $c !== null) {
-        $pesan = "Anda Memesan <br> Makanan :  $a <br> Minuman : $b <br> Cemilan :  $c"; 
+        $pesan = "Anda Memesan <br> Makanan :  $a <br> Minuman : $b <br> Cemilan :  $c";
     }
     return $pesan;
 });
