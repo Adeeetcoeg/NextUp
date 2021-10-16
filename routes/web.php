@@ -104,27 +104,54 @@ Route::get('/hobi', function () {
 
         $jee = [
         ['nis' => 1001,
-         'nama' => 'Adzurra',
+         'nama' => 'Aditya Nugroho',
          'kelas' => 'XII RPL 1',
          'hobi'  => [
-                        'hobi1' => 'Pergi ke CC',
-                        'hobi2' => 'Tiktokan',
-                        'hobi3' => 'Makan Banyak'
+                        'hobi1' => 'Mengbadut',
+                        'hobi2' => 'Overthing',
+                        'hobi3' => 'Gagal'
          ]
          ],
          ['nis' => 1002,
-         'nama' => 'Iqbal',
+         'nama' => 'xCoeg',
          'kelas' => 'XII RPL 1',
          'hobi'  => [
-                        'hobi1' => 'Ngebegal',
-                        'hobi2' => 'Ngaji',
-                        'hobi3' => 'Memancing'
+                        'hobi1' => 'Gagal',
+                        'hobi2' => 'Gagal',
+                        'hobi3' => 'Gagal'
          ]
          ],
     ];
 
     return view('hobi', compact('jee'));
 });
+
+Route::get('/testmodel', function() {
+    $query =  App\Models\Post::all();
+
+    return $query;
+    });
+
+Route::get('/test-view', function() {
+        $query =  App\Models\Post::all();
+        return view('test-view', compact('query'));
+        });
+
+Route::get('/biodatas', function() {
+            $xcoeg =  App\Models\Biodatas::all();
+            return view('biodatas', compact('xcoeg'));
+            });
+
+
+
+
+
+//INI BATAS YAH ANJENG
+//YA YOU KNOW LAH
+
+
+
+
 
 Route::get('/rahasia', function () {
     return "ini tempat rahasia";
@@ -180,6 +207,21 @@ Route::get('/ujian/{nama?}/{kelas?}/{a?}/{b?}/{c?}/{d?}',
     echo"<br>Nilai Produktif : " . $d ;
     echo"<br>Nilai Rata-Rata : ". $ya;
 });
+
+
+
+
+
+
+
+
+//INI JUGA BATAS YAH ANJENG
+//BAGIAN KEBAWAH TU MAKE KONDISI YAH ADIT ASU
+
+
+
+
+
 
 Route::get('pesanan/{makananan?}/{minuman?}/{cemilan?}',function($a=null,$b=null,$c=null){
     if( $a == null && $b == null && $c == null) {
