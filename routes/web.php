@@ -154,6 +154,10 @@ Route::get('/contoh', function () {
 Route::get('/contoh', [MyController::class,'show']);
 
 Route::get('/artikel', [PostController::class,'data']);
+
+Route::get('/tryhard', [PostController::class,'tryhard']);
+
+
 //INI BATAS YAH ANJENG
 //YA YOU KNOW LAH
 
