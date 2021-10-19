@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -144,8 +146,14 @@ Route::get('/biodatas', function() {
 
 
 
+Route::get('/contoh', function () {
+        return view('example');
+        });
 
 
+Route::get('/contoh', [MyController::class,'show']);
+
+Route::get('/artikel', [PostController::class,'data']);
 //INI BATAS YAH ANJENG
 //YA YOU KNOW LAH
 
