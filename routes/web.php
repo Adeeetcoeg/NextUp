@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PostController;
-
+use App\http\Controllers\BarangController;
+use App\http\Controllers\PesananController;
+use App\http\Controllers\PembelianController;
+use App\http\Controllers\PembeliController;
+use App\http\Controllers\SuplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -155,7 +159,11 @@ Route::get('/contoh', [MyController::class,'show']);
 
 Route::get('/artikel', [PostController::class,'data']);
 
-Route::get('/tryhard', [PostController::class,'tryhard']);
+Route::get('/barang', [BarangController::class, 'data']);
+Route::get('/pesanan', [PesananController::class, 'data']);
+Route::get('/pembelian', [PembelianController::class, 'data']);
+Route::get('/pembeli', [PembeliController::class, 'data']);
+Route::get('/suplier', [SuplierController::class, 'data']);
 
 
 //INI BATAS YAH ANJENG
